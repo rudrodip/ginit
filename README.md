@@ -2,6 +2,8 @@
 
 Ginit is a command-line tool for initializing projects with predefined structures and configurations. It aims to streamline the project setup process by providing a simple interface to generate project skeletons.
 
+![Example](https://raw.githubusercontent.com/rudrodip/ginit/github/example.gif)
+
 ## Features
 
 - **Easy Project Initialization:** Quickly set up projects with predefined structures.
