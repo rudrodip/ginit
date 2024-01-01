@@ -6,6 +6,7 @@ BIN_NAME="ginit"
 
 # Colors
 GREEN='\033[0;32m'
+BLUE='\033[0;34m'
 RED='\033[0;31m'
 NC='\033[0m' # No Color
 
@@ -42,6 +43,7 @@ mv "$BIN_NAME" "$INSTALL_DIR/"
 if [ $? -eq 0 ]; then
     echo -e "${GREEN}$BIN_NAME installed successfully in $INSTALL_DIR${NC}"
     echo -e "${GREEN}Make sure to add $INSTALL_DIR to your PATH.${NC}"
+    echo -e "${BLUE}\nRun 'ginit' in terminal\n${NC}"
 else
     echo -e "${RED}Error moving $BIN_NAME to $INSTALL_DIR. Please check permissions.${NC}"
     rm -f "$INSTALL_DIR/$BIN_NAME"  # Remove the binary if the move operation failed
