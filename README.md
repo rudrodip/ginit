@@ -1,0 +1,1 @@
+# ginit - cli tool for fast initalization of go projects
