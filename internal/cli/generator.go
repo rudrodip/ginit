@@ -63,6 +63,31 @@ func generateBackendProject(project Project) error {
 	return nil
 }
 
+func generateBlankProject(project Project) error {
+	fmt.Println("Generating Backend project...")
+
+	fileStructure := generateBlankProjectStructure(project)
+	rootPath := filepath.Join(".")
+	fmt.Println(rootPath)
+
+	if err := createFolderStructure(rootPath, fileStructure); err != nil {
+		return err
+	}
+
+	if err := os.Chdir(filepath.Join(".", project.Name)); err != nil {
+		return err
+	}
+
+	if err := initialize(project.Module); err != nil {
+		return err
+	}
+
+	printFolderStructure(fileStructure, "")
+	fmt.Printf("Project %s successfully generated!\n", project.Name)
+
+	return nil
+}
+
 func createFolderStructure(rootPath string, node Folder) error {
 	rootFullPath := filepath.Join(rootPath, node.Name)
 

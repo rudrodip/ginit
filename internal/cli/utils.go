@@ -59,6 +59,40 @@ type File struct {
 	Content string
 }
 
+func generateBlankProjectStructure(project Project) Folder {
+	rootFolderName := project.Name
+
+	fileStructure := Folder{
+		Name: rootFolderName,
+		Children: []interface{}{
+			Folder{
+				Name: "cmd",
+				Children: []interface{}{
+					Folder{
+						Name: rootFolderName,
+						Children: []interface{}{
+							File{
+								Name:    "main.go",
+								Content: `package main`,
+							},
+						},
+					},
+				},
+			},
+			File{
+				Name:    ".gitignore",
+				Content: `bin`,
+			},
+			File{
+				Name:    "README.md",
+				Content: `# project documentation`,
+			},
+		},
+	}
+
+	return fileStructure
+}
+
 func generateMyCLIStructure(project Project) Folder {
 	rootFolderName := project.Name
 

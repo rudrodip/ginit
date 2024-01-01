@@ -6,6 +6,7 @@ type ProjectType struct {
 }
 
 var ProjectTypeOptions = map[ProjectType]GenFunc{
-	{Name: "CLI", Alias: 1}:     generateCLIProject,
-	{Name: "Backend", Alias: 2}: generateBackendProject,
+	{Name: "Blank", Alias: 1}:   generateBlankProject,
+	{Name: "CLI", Alias: 2}:     generateCLIProject,
+	{Name: "Backend", Alias: 3}: generateBackendProject,
 }
